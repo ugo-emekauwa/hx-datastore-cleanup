@@ -45,7 +45,7 @@ This script is intended for use on Cisco HyperFlex systems in demonstration or t
     ```python
     hx_exempted_datastores_list = ("datastore1")
     ```
-10. Save the **hx_datastore_cleanup.py** file. It is now ready for use.
+10. Save the **hx_datastore_cleanup.py** file. The file is now ready for use.
 
 
 ## Author:
