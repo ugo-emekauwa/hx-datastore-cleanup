@@ -37,11 +37,11 @@ This script is intended for use on Cisco HyperFlex systems in demonstration or t
     ```python
     hx_datastore_retention_time_limit_hours = 24
     ```
-9. [_Optional_] Set the value of the variable named `hx_exempted_datastores_list` by providing the names of any datastores that will be exempt from the retention time limit. The values must be strings separated by commas within the parentheses of the provided empty tuple `()`. For example, here is an entry that exempts 3 datastores from the retention time limit:
+9. [_Optional_] Set the value of the variable named `hx_exempted_datastores_list` by providing the names of any datastores that will be exempt from the retention time limit. The values must be strings separated by commas within the parentheses of the provided empty tuple `()`. For example, here is a sample entry that exempts three datastores from the retention time limit:
     ```python
     hx_exempted_datastores_list = ("datastore1", "datastore2", "datastore3")
     ```
-    Here is another example with an entry that exempts just 1 datastore from the retention time limit: 
+    Here is another example with a sample entry that exempts one datastore from the retention time limit: 
     ```python
     hx_exempted_datastores_list = ("datastore1")
     ```
