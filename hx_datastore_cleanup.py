@@ -151,5 +151,5 @@ except Exception as exception_message:
     print("{}\n".format(str(exception_message)))
 
 # Exiting the HyperFlex Datastore Cleanup Script
-print("\nThe HyperFlex Datastore Cleanup Script is complete.")
+print("\nThe HyperFlex Datastore Cleanup Script is complete.\n")
 sys.exit(0)
