@@ -14,9 +14,9 @@ This script is intended for use on Cisco HyperFlex systems in demonstration or t
     ```
     python -m pip install -r requirements.txt
     ```
-2. The IP address of the targeted Cisco HyperFlex system.
-3. User credentials with administrative rights on the targeted Cisco HyperFlex system.
-4. [_Optional_] The names of any datastores on the targeted Cisco HyperFlex system which will be exempt from any retention time limit.
+4. The IP address of the targeted Cisco HyperFlex system.
+5. User credentials with administrative rights on the targeted Cisco HyperFlex system.
+6. [_Optional_] The names of any datastores on the targeted Cisco HyperFlex system which will be exempt from any retention time limit.
 
 
 ## Getting Started:
