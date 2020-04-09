@@ -6,7 +6,7 @@ This script is intended for use on Cisco HyperFlex systems in demonstration or t
 
 ## Prerequisites:
 1. Python 3 installed, which can be downloaded from [https://www.python.org/downloads/](https://www.python.org/downloads/).
-2. Clone or download the Cisco HyperFlex Datastore Cleanup repository by using the ![Gitub Clone or download](./assets/Github_Clone_or_download_link_button.png "Github Clone or download") link on the main repository web page or by running the following command:
+2. Clone or download the Cisco HyperFlex Datastore Cleanup repository by using the ![GitHub Clone or download](./assets/GitHub_Clone_or_download_link_button.png "GitHub Clone or download") link on the main repository web page or by running the following command:
     ```
     git clone https://github.com/ugo-emekauwa/hx-datastore-cleanup
     ```
@@ -41,7 +41,7 @@ This script is intended for use on Cisco HyperFlex systems in demonstration or t
     ```python
     hx_connect_ip = "192.168.1.100"
     ```
-8. Set the value of the variable named `hx_datastore_retention_time_limit_hours` with the maximum number of hours that a datastore can be retained on the Cisco HyperFlex system before deletion. The value must be an integer. For example, here is an entry that sets the retention time limit to **24** hours:
+8. Set the value of the variable named `hx_datastore_retention_time_limit_hours` with the maximum number of hours that a newly created or pre-existing datastore can be retained on the Cisco HyperFlex system before deletion. The value must be an integer. For example, here is an entry that sets the retention time limit to **24** hours:
     ```python
     hx_datastore_retention_time_limit_hours = 24
     ```
@@ -55,6 +55,30 @@ This script is intended for use on Cisco HyperFlex systems in demonstration or t
     ```
 10. Save the **hx_datastore_cleanup.py** file. The file is now ready for use.
 
+## How to Use (w/ Examples):
+
+1. After fulfilling the requirements listed in the [**Prerequisites**](https://github.com/ugo-emekauwa/hx-datastore-cleanup#prerequisites) and [**Getting Started**](https://github.com/ugo-emekauwa/hx-datastore-cleanup#getting-started) sections, run the **hx_datastore_cleanup.py** script directly from your IDE or from the command line e.g.:
+    ```
+    python hx_datastore_cleanup.py
+    ```
+2. Here is an example of the output from the **hx_datastore_cleanup.py** script in which the datastores named datastore1 and datastore2 on the targeted HyperFlex cluster are exempt and no other datastores are present.
+
+    ![Initial Datastore Cleanup Run](./assets/Initial_Datastore_Cleanup_Run.png "Initial Datastore Cleanup Run")
+
+    All of the available datastores on the targeted HyperFlex cluster are listed with information regarding the size, creation time and age. The datastore retention time limit set is 2 hours. No datastores need to be cleaned up at this time. The exemption of datastore1 and datastore2 is accomplished with the following entries in hx_exempted_datastores_list:
+    ```python
+    hx_exempted_datastores_list = ("datastore1", "datastore2")
+    ```
+
+3. To test the **hx_datastore_cleanup.py** script, here two test datastores named test_datastore1 and test_datastore2 have been created in HX Connect on the targeted HyperFlex cluster.
+
+    ![Two Test Datastores Added in HX Connect](./assets/Two_Test_Datastores_Added_in_HX_Connect.png "Two Test Datastores Added in HX Connect")
+
+4. After waiting 2 hours for the datastore retention time to be exceeded, here is an example of the output from the **hx_datastore_cleanup.py**.
+
+    ![Subsequent Datastore Cleanup Run](./assets/Subsequent_Datastore_Cleanup_Run.png "Subsequent Datastore Cleanup Run")
+
+    As shown, the two datastores named test_datastore1 and test_datstore2 are deleted due to having exceeded the set datastore retention time limit of 2 hours and not being a part of the exemption list in the script. The datastores named datastore1 and datastore2 that are part of the exemption list are left untouched.
 
 ## Author:
 Ugo Emekauwa
