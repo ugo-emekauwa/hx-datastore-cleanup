@@ -70,15 +70,17 @@ This script is intended for use on Cisco HyperFlex systems in demonstration or t
     hx_exempted_datastores_list = ("datastore1", "datastore2")
     ```
 
-3. To test the **hx_datastore_cleanup.py** script, here two test datastores named test_datastore1 and test_datastore2 have been created in HX Connect on the targeted HyperFlex cluster.
+3. To test the **hx_datastore_cleanup.py** script, here two test datastores named test_datastore1 and test_datastore2 have been created in HX Connect on a targeted HyperFlex cluster.
 
     ![Two Test Datastores Added in HX Connect](./assets/Two_Test_Datastores_Added_in_HX_Connect.png "Two Test Datastores Added in HX Connect")
 
-4. After waiting 2 hours for the datastore retention time to be exceeded, here is an example of the output from the **hx_datastore_cleanup.py**.
+4. After waiting over 2 hours for the datastore retention time limit to be met or exceeded, here is an example of the output after re-running the **hx_datastore_cleanup.py**.
 
     ![Subsequent Datastore Cleanup Run](./assets/Subsequent_Datastore_Cleanup_Run.png "Subsequent Datastore Cleanup Run")
 
-    As shown, the two datastores named test_datastore1 and test_datstore2 are deleted due to having exceeded the set datastore retention time limit of 2 hours and not being a part of the exemption list in the script. The datastores named datastore1 and datastore2 that are part of the exemption list are left untouched.
+    As the above screenshot shows, the datastores named test_datastore1 and test_datastore2 were deleted due to their age exceeding the set datastore retention time limit of 2 hours. Also, test_datastore1 and test_datastore2 were not in the exemption list of the script.
+    
+    The datastores named datastore1 and datastore2 are not deleted, regardless of their age, due to being listed in the exemption list of the script.
 
 ## Author:
 Ugo Emekauwa
