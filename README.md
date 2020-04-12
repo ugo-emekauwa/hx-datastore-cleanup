@@ -1,8 +1,8 @@
 # Cisco HyperFlex Datastore Cleanup
 
-The HyperFlex Datastore Cleanup Script for Cisco HyperFlex utilizes the HyperFlex API to automatically delete any datastores that have met or exceeded a specified retention time limit. The ability to exempt any datastores from the retention time limit is provided.
+Cisco HyperFlex Datastore Cleanup for Cisco HyperFlex utilizes the HyperFlex API to automatically delete any datastores that have met or exceeded a specified retention time limit. The ability to exempt any datastores from the retention time limit is provided.
 
-This script is intended for use on Cisco HyperFlex systems in demonstration or training environments. Do not use on production systems.
+This tool is intended for use on Cisco HyperFlex systems in demonstration or training environments. Do not use on production systems.
 
 ## Prerequisites:
 1. Python 3 installed, which can be downloaded from [https://www.python.org/downloads/](https://www.python.org/downloads/).
@@ -21,31 +21,30 @@ This script is intended for use on Cisco HyperFlex systems in demonstration or t
 
 ## Getting Started:
 1. Please ensure that the above prerequisites have been met.
-2. Download the **hx_datastore_cleanup.py** file from this repository here on GitHub.
-3. Open the **hx_datastore_cleanup.py** file in an IDE or text editor.
-4. Go to the comment section named **Required Variables**, as shown below:
+2. Open the **hx_datastore_cleanup.py** file in an IDE or text editor.
+3. Go to the comment section named **Required Variables**, as shown below:
     ```python
     ######################
     # Required Variables #
     ######################
     ```
-5. Set the value of the variable named `hx_admin` with the username of the credentials that will be used to access the targeted Cisco HyperFlex system. The value must be a string. For example, here is an entry the sets the username to **admin**:
+4. Set the value of the variable named `hx_admin` with the username of the credentials that will be used to access the targeted Cisco HyperFlex system. The value must be a string. For example, here is an entry the sets the username to **admin**:
     ```python
     hx_admin = "admin"
     ```
-6. Set the value of the variable named `hx_password` with the password of the credentials that will be used to access the targeted Cisco HyperFlex system. The value must be a string. For example, here is an entry that sets the password to **C1sco12345**:
+5. Set the value of the variable named `hx_password` with the password of the credentials that will be used to access the targeted Cisco HyperFlex system. The value must be a string. For example, here is an entry that sets the password to **C1sco12345**:
     ```python
     hx_password = "C1sco12345"
     ```
-7. Set the value of the variable named `hx_connect_ip` with the IP address of the targeted Cisco HyperFlex system. The value must be a string. For example, here is an entry that sets the IP address to **192.168.1.100**:
+6. Set the value of the variable named `hx_connect_ip` with the IP address of the targeted Cisco HyperFlex system. The value must be a string. For example, here is an entry that sets the IP address to **192.168.1.100**:
     ```python
     hx_connect_ip = "192.168.1.100"
     ```
-8. Set the value of the variable named `hx_datastore_retention_time_limit_hours` with the maximum number of hours that a newly created or pre-existing datastore can be retained on the Cisco HyperFlex system before deletion. The value must be an integer. For example, here is an entry that sets the retention time limit to **24** hours:
+7. Set the value of the variable named `hx_datastore_retention_time_limit_hours` with the maximum number of hours that a newly created or pre-existing datastore can be retained on the Cisco HyperFlex system before deletion. The value must be an integer. For example, here is an entry that sets the retention time limit to **24** hours:
     ```python
     hx_datastore_retention_time_limit_hours = 24
     ```
-9. [_Optional_] Set the value of the variable named `hx_exempted_datastores_list` by providing the names of any datastores that will be exempt from the retention time limit. The values must be strings separated by commas within the parentheses of the provided empty tuple `()`. For example, here is a sample entry that exempts three datastores from the retention time limit:
+8. [_Optional_] Set the value of the variable named `hx_exempted_datastores_list` by providing the names of any datastores that will be exempt from the retention time limit. The values must be strings separated by commas within the parentheses of the provided empty tuple `()`. For example, here is a sample entry that exempts three datastores from the retention time limit:
     ```python
     hx_exempted_datastores_list = ("datastore1", "datastore2", "datastore3")
     ```
@@ -53,15 +52,15 @@ This script is intended for use on Cisco HyperFlex systems in demonstration or t
     ```python
     hx_exempted_datastores_list = ("datastore1")
     ```
-10. Save the **hx_datastore_cleanup.py** file. The file is now ready for use.
+9. Save the **hx_datastore_cleanup.py** file. The file is now ready for use.
 
 ## How to Use (w/ Examples):
 
-1. After fulfilling the requirements listed in the [**Prerequisites**](https://github.com/ugo-emekauwa/hx-datastore-cleanup#prerequisites) and [**Getting Started**](https://github.com/ugo-emekauwa/hx-datastore-cleanup#getting-started) sections, run the **hx_datastore_cleanup.py** script directly from your IDE or from the command line e.g.:
+1. After fulfilling the requirements listed in the [**Prerequisites**](https://github.com/ugo-emekauwa/hx-datastore-cleanup#prerequisites) and [**Getting Started**](https://github.com/ugo-emekauwa/hx-datastore-cleanup#getting-started) sections, run **hx_datastore_cleanup.py** directly from your IDE or from the command line e.g.:
     ```
     python hx_datastore_cleanup.py
     ```
-2. Here is an example of the output from the **hx_datastore_cleanup.py** script in which the datastores named datastore1 and datastore2 on the targeted HyperFlex cluster are exempt and no other datastores are present.
+2. Here is an example of the output from **hx_datastore_cleanup.py** in which the datastores named datastore1 and datastore2 on the targeted HyperFlex cluster are exempt and no other datastores are present.
 
     ![Initial Datastore Cleanup Run](./assets/Initial_Datastore_Cleanup_Run.png "Initial Datastore Cleanup Run")
 
@@ -70,7 +69,7 @@ This script is intended for use on Cisco HyperFlex systems in demonstration or t
     hx_exempted_datastores_list = ("datastore1", "datastore2")
     ```
 
-3. To test the **hx_datastore_cleanup.py** script, here two test datastores named test_datastore1 and test_datastore2 have been created in HX Connect on a targeted HyperFlex cluster.
+3. To test **hx_datastore_cleanup.py**, here two test datastores named test_datastore1 and test_datastore2 have been created in HX Connect on a targeted HyperFlex cluster.
 
     ![Two Test Datastores Added in HX Connect](./assets/Two_Test_Datastores_Added_in_HX_Connect.png "Two Test Datastores Added in HX Connect")
 
@@ -78,9 +77,9 @@ This script is intended for use on Cisco HyperFlex systems in demonstration or t
 
     ![Subsequent Datastore Cleanup Run](./assets/Subsequent_Datastore_Cleanup_Run.png "Subsequent Datastore Cleanup Run")
 
-    As the above screenshot shows, the datastores named test_datastore1 and test_datastore2 were deleted due to their age exceeding the set datastore retention time limit of 2 hours. Also, test_datastore1 and test_datastore2 were not in the exemption list of the script.
+    As the above screenshot shows, the datastores named test_datastore1 and test_datastore2 were deleted due to their age exceeding the set datastore retention time limit of 2 hours. Also, test_datastore1 and test_datastore2 were not in the exemption list.
     
-    The datastores named datastore1 and datastore2 are not deleted, regardless of their age, due to being listed in the exemption list of the script.
+    The datastores named datastore1 and datastore2 are not deleted, regardless of their age, due to being listed in the exemption list.
 
 ## Author:
 Ugo Emekauwa
