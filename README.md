@@ -83,7 +83,7 @@ This tool is intended for use on Cisco HyperFlex systems in demonstration or tra
     
     The datastores named datastore1 and datastore2 are not deleted, regardless of their age, due to being listed in the exemption list.
 
-## Related Tools
+## Related Tools:
 Here are similar tools to help manage Cisco HyperFlex training, demonstration and development environments:
 - [Cisco HyperFlex Datastore Safeguard](https://github.com/ugo-emekauwa/hx-datastore-safeguard)
 - [HyperFlex Notification Tool for Cisco Intersight](https://github.com/ugo-emekauwa/hyperflex-notification-tool)
