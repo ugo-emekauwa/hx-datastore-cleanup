@@ -75,7 +75,7 @@ This tool is intended for use on Cisco HyperFlex systems in demonstration or tra
 
     ![Two Test Datastores Added in HX Connect](./assets/Two_Test_Datastores_Added_in_HX_Connect.png "Two Test Datastores Added in HX Connect")
 
-4. After waiting over 2 hours for the datastore retention time limit to be met or exceeded, here is an example of the output after re-running the **hx_datastore_cleanup.py**.
+4. After waiting over 2 hours for the datastore retention time limit to be met or exceeded, here is an example of the output after re-running **hx_datastore_cleanup.py**.
 
     ![Subsequent Datastore Cleanup Run](./assets/Subsequent_Datastore_Cleanup_Run.png "Subsequent Datastore Cleanup Run")
 
