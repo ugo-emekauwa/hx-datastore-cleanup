@@ -1,5 +1,7 @@
 # Cisco HyperFlex Datastore Cleanup
 
+[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/ugo-emekauwa/hx-datastore-cleanup)
+
 Cisco HyperFlex Datastore Cleanup for Cisco HyperFlex utilizes the HyperFlex API to automatically delete any datastores that have met or exceeded a specified retention time limit. The ability to exempt any datastores from the retention time limit is provided.
 
 This tool is intended for use on Cisco HyperFlex systems in demonstration or training environments. Do not use on production systems.
@@ -80,6 +82,11 @@ This tool is intended for use on Cisco HyperFlex systems in demonstration or tra
     As the above screenshot shows, the datastores named test_datastore1 and test_datastore2 were deleted due to their age exceeding the set datastore retention time limit of 2 hours. Also, test_datastore1 and test_datastore2 were not in the exemption list.
     
     The datastores named datastore1 and datastore2 are not deleted, regardless of their age, due to being listed in the exemption list.
+
+## Related Tools
+Here are similar tools to help manage Cisco HyperFlex training, demonstration and development environments:
+- [Cisco HyperFlex Datastore Safeguard](https://github.com/ugo-emekauwa/hx-datastore-safeguard)
+- [HyperFlex Notification Tool for Cisco Intersight](https://github.com/ugo-emekauwa/hyperflex-notification-tool)
 
 ## Author:
 Ugo Emekauwa
